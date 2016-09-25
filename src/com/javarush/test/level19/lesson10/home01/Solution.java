@@ -22,8 +22,36 @@ package com.javarush.test.level19.lesson10.home01;
 Сидоров 6.0
 */
 
-public class Solution {
-    public static void main(String[] args) {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
+public class Solution {
+    public static void main(String[] args) throws IOException
+    {
+        SortedMap<String, Double> stringDoubleMap = new TreeMap<>();
+
+        BufferedReader fileBufferedReader = new BufferedReader(new FileReader(args[0].toString()));
+
+        String string;
+        while ((string = fileBufferedReader.readLine())!= null) {
+            String[] strings = string.split(" ");
+            Double aDouble = stringDoubleMap.get(strings[0]);
+
+            if (aDouble == null) {
+                stringDoubleMap.put(strings[0], Double.parseDouble(strings[1]));
+            } else {
+                stringDoubleMap.put(strings[0], Double.parseDouble(strings[1]) + aDouble);
+            }
+        }
+
+        fileBufferedReader.close();
+
+        for (Map.Entry entry : stringDoubleMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
     }
 }
