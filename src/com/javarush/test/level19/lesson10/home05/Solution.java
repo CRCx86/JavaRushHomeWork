@@ -22,13 +22,17 @@ public class Solution {
 
         String string;
         while ((string = fileBufferedReader.readLine())!= null) {
-            Pattern p = Pattern.compile("^[a-z0-9]$");
-            Matcher m = p.matcher(string);
 
-            if (m.find()) {
-                fileBufferedWriter.write(m.group() + " ");
+            String[] buffer = string.split(" ");
+
+            for (String s : buffer) {
+                Pattern p = Pattern.compile("\\b.*\\d.*\\b"); // регулярка - начало слова, любой симовол, любое количество раз, любая цифра, любой символ, любое количество раз
+                Matcher m = p.matcher(s);
+
+                if (m.find()) {
+                    fileBufferedWriter.write(m.group() + " ");
+                }
             }
-            fileBufferedWriter.flush();
         }
 
         fileBufferedReader.close();
