@@ -11,7 +11,7 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Solution {
+public class Solution1 {
     public static void main(String[] args) throws IOException
     {
         if (args.length == 0)
