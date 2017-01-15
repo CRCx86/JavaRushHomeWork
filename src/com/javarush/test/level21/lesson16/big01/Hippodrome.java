@@ -26,6 +26,8 @@ public class Hippodrome
 
         game.run();
 
+        game.printWinner();
+
     }
 
     public ArrayList<Horse> getHorses()
@@ -60,6 +62,27 @@ public class Hippodrome
 
         System.out.println();
         System.out.println();
+
+    }
+
+    public Horse getWinner() {
+
+        double distance = 0;
+        Horse winner = null;
+
+        for (Horse horse : getHorses()) {
+            if (horse.getDistance() >= distance) {
+                distance = horse.getDistance();
+                winner = horse;
+            }
+        }
+
+        return winner;
+    }
+
+    public void printWinner() {
+
+        System.out.println("Winner is " + getWinner().name + "!");
 
     }
 

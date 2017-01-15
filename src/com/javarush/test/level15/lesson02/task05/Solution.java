@@ -26,7 +26,7 @@ public class Solution {
         }
 
         public String toString() {
-            return containsBones() ? name + " содержит кости" : name + " не содержит кости";
+            return (boolean) containsBones() ? name + " содержит кости" : name + " не содержит кости";
         }
     }
 
@@ -38,7 +38,7 @@ public class Solution {
         }
 
         public Object containsBones() {
-            return super.containsBones() && !isFoot;
+            return (boolean) super.containsBones() && !isFoot;
         }
     }
     public static void main(String[] args)

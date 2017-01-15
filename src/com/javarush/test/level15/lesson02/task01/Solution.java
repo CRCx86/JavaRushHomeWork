@@ -21,7 +21,7 @@ public class Solution {
     public static class Clothes implements Movable, Discountable {
         @Override
         public Object getAllowedAction() {
-            super();
+            //super();
             return null;
         }
 
