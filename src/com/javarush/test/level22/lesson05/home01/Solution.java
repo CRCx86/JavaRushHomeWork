@@ -60,15 +60,5 @@ public class Solution {
             }
         }
 
-//        if ((string == null) || (string.isEmpty()) || (findex == -1) || (findex == lindex)) {
-//            if (threadName.equals("1#")) {
-//                throw new TooShortStringFirstThreadException(e);
-//            }else if (threadName.equals("2#")) {
-//                throw new TooShortStringSecondThreadException();
-//            } else {
-//                throw new RuntimeException();
-//            }
-//        }
-
     }
 }
